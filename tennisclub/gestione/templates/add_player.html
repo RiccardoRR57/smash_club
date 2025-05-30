@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block head %} {% endblock %}
+{% block title %} {{title}} {% endblock %}
+
+{% block content %}
+    <center>
+    <h1> {{title}} </h1>
+
+    {% if message == "" %}
+        <form action="{% url 'gestione:add_player' %}">
+        <label for="first_name">Nome:</label><br>
+        <input type="text" id="first_name" name="first_name"><br>
+        <label for="last_name">Cognome:</label><br>
+        <input type="text" id="last_name" name="last_name"><br>
+        <label for="birth_date">Data di nascita:</label><br>
+        <input type="date" id="birth_date" name="birth_date"><br><br>
+        <input type="submit" value="Aggiungi Giocatore">
+        </form>
+    {% else %}
+        <p> {{ message }} </p>
+        <a href="{% url 'gestione:player_list' %}">Torna alla lista dei giocatori</a>
+    {% endif %}
+    </center>
+{% endblock %}

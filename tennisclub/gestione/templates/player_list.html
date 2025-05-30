@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block head %} {% endblock %}
+{% block title %} {{title}} {% endblock %}
+
+{% block content %}
+
+    <center>
+    <h1> {{title}} </h1>
+
+    {% if playerlist.count > 0 %}
+        <p> Ci sono {{ playerlist.count }} giocatori registrati al club. </p>
+        <ul>
+            {% for player in playerlist %}
+                <li> {{ player }} </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p> Non ci sono giocatori registrati al club. </p>
+    {% endif %}
+
+    </center>
+
+{% endblock %}

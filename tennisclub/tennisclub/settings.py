@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'bookings',  # Custom app for court bookings
     'courts',    # Custom app for managing tennis courts
     'matches',   # Custom app for managing tennis matches
+    'gestione',
 ]
 
 MIDDLEWARE = [
