@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} {{object.first_name}} {{object.last_name}} {% endblock %}
+
+{% block content %}
+
+    <h1>Dettagli di {{object.first_name}} {{object.last_name}}</h1>
+    <br>
+
+    <li> Nome: {{object.first_name}}</li>
+    <li> Cognome: {{object.last_name}}</li>
+    <li> Data di nascita: {{object.birth_date}}</li>
+
+{% endblock %}

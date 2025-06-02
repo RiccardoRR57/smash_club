@@ -17,12 +17,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from . import views
+from .views import *
 
 app_name = 'gestione'
 
 urlpatterns = [
-    path('', views.home, name='home'),
-    path('player_list/', views.player_list, name='player_list'),
-    path('add_player/', views.add_player, name='add_player'),
+    path('', home, name='home'),
+    path('player_list/', player_list, name='player_list'),
+    path('add_player/', add_player, name='add_player'),
+    path('player_list_class/', PlayerListView.as_view(), name='player_list_class'),
+    path('add_player_class/', PlayerCreateView.as_view(), name='add_player_class'),
+    path('detail/<pk>/', PlayerDetailView.as_view(), name='player_detail'),
+    path('update/<pk>/', PlayerUpdateView.as_view(), name='player_update'),
+    path('delete/<pk>/', PlayerDeleteView.as_view(), name='player_delete'),
+    path("search/", search, name="search"),
+    path("searchresults/<str:sstring>/<str:where>/", SearchResultsList.as_view(), name="searchresults")
 ]

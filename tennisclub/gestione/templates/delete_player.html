@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block head %} {% endblock %}
+{% block title %} {{title}} {% endblock %}
+
+{% block content %}
+    <center>
+    <h1> {{title}} </h1>
+
+
+    <h1> Elimina Giocatore </h1>
+    <form method="post">{% csrf_token %}
+    <p> Sei sicuro di voler eliminare il giocatore {{ player.first_name }} {{ player.last_name }}?</p>
+    <input type="submit" value="Delete">
+    </form>
+
+{% endblock %}

@@ -22,7 +22,6 @@ from . import fill_db
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('gestione/', include('gestione.urls')),
+    path('fill_db/', fill_db.fill_db, name='fill_db'),
+    path('erase_db/', fill_db.erase_db, name='erase_db'),
 ]
-
-fill_db.erase_db()
-fill_db.fill_db()
